@@ -29,9 +29,10 @@ jobs:
       - name: Deploy Application
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd /home/ubuntu/simple-gin-app
+            cd /home/ec2-user/simple-gin-app
             pkill -f ./myapp
-            git pull origin master
+            git pull origin main
+            cd /home/ec2-user/simple-gin-app
             go build -o myapp main.go
             nohup ./myapp > myapp.log 2>&1 &
           EOF
