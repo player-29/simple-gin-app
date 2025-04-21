@@ -20,7 +20,7 @@ func PingHandler(c *gin.Context) {
 func main() {
 
 	r := gin.Default()
-	r.GET("/ping", PingHandler)
+	r.GET("/pinging", PingHandler)
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Error loading .env file")
