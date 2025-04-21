@@ -31,7 +31,7 @@ func main() {
 	user := v1.Group("/user")
 	user.GET("/getUsers", middlewares.AuthorizationMiddleware(), handler.GetAllUsers)
 
-	err = r.Run("localhost:8090")
+	err = r.Run("0.0.0.0:8090")
 	if err != nil {
 		return
 	}
