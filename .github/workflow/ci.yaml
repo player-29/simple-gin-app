@@ -32,8 +32,7 @@ jobs:
             cd /home/ec2-user/simple-gin-app
             pkill -f ./myapp
             git pull origin main
-            cd /home/ec2-user/simple-gin-app
-            go build -o myapp main.go
+            go build -o myapp cmd/main.go
             nohup ./myapp > myapp.log 2>&1 &
           EOF
         shell: bash
